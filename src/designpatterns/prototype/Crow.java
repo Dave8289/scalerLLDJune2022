@@ -7,7 +7,8 @@ public class Crow extends Bird {
         this.sound = sound;
     }
 
-    public Crow() {}
+    public Crow() {
+    }
 
     public Crow(Crow old) {
         super(old);
@@ -16,12 +17,6 @@ public class Crow extends Bird {
 
     @Override
     public Crow clone() {
-//        Parent attributes aren't copied
-//        Crow copy = new Crow();
-//        copy.sound = this.sound;
-
-//        Bird cloneParent = super.clone();
-
         return new Crow(this);
     }
 }

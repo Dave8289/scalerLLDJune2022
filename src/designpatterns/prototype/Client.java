@@ -1,7 +1,5 @@
 package designpatterns.prototype;
 
-import overriding.B;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,23 +19,14 @@ public class Client {
         crow1.setSound("Kooooooo");
         crow1.setWeight(34);
 
-        List<Bird> birds = List.of(
-                sparrow1,
-                crow1,
-                bird1
-        );
-
+        List<Bird> birds = List.of(sparrow1, crow1, bird1);
         List<Bird> children = new ArrayList<>();
 
-        for (Bird parent: birds) {
-//            if (parent instanceof Bird) {
-//                children.add(new Bird(parent));
-//            }
-
+        for (Bird parent : birds) {
             children.add(parent.clone());
         }
 
-        for (Bird child: children) {
+        for (Bird child : children) {
             child.setName("IT IS A COPY");
         }
 
@@ -56,12 +45,11 @@ public class Client {
         List<String> getBirdOfTypes = List.of(
                 "sweetSoundCrow",
                 "longLeggedSparrow",
-                "sweetSoundCrow"
-        );
+                "sweetSoundCrow");
 
         List<Bird> requestedBirds = new ArrayList<>();
 
-        for (String type: getBirdOfTypes) {
+        for (String type : getBirdOfTypes) {
             requestedBirds.add(birdRegistry.getBird(type));
         }
 
